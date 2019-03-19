@@ -88,23 +88,22 @@ Inline {url "http://www3.ntu.edu.sg/home/assourin/FVRML/CoordinateAxes.wrl"}
 FShape {
 geometry FGeometry {
 
-# The parametric formulae defining the solid. 
-# Change them to some other formulae to see how the solid geometry changes 
+# The parametric formulae defining the surface. 
+# Change them to some other formulae to see how the surface geometry changes 
 # based on the parameters domain and the sampling resolution defined below
-definition "x=u;
-			y=v;
-			z=w;"
-
+definition "x=u*2*pi;
+			y=sin(u*2*pi) + v;
+			z=0;"
 # The parameters domain. Explore what happens when you make it 
 # smaller or bigger
-parameters [0 1 0 1 0 1]
+parameters [0 1 0 1]
 
 # Sampling resolution in parameters u and v. 
 # This is how the parameters domain is sampled to calculate the
 # geometry function. 
 # Explore how the shape and the rendering speed change when you 
 # reduce or increase the resolution.
-resolution [75 75 75]
+resolution [75 75]
 
  }     
 
